@@ -1,0 +1,137 @@
+{
+    "dwl/tags" : {
+        "on-click": "activate",
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{}",
+        "format-icons": {
+			"urgent": "",
+			"active": "",
+			"default": ""
+        },
+        "persistent-tags": {
+             "*": 5
+        }       
+    },
+
+    "custom/exit": {
+        "format": "",
+        "tooltip-format": "Powermenu",
+        "on-click": "wlogout -b 4 -T 350 -B 350",
+        "tooltip": false
+    },
+
+    "tray": {
+        "icon-size": 20,
+        "spacing": 5
+    },
+
+    "clock": {
+        "timezone": "America/Chicago",
+        "format": "{:%I:%M %p}",
+	"tooltip-format": "{:%m-%d-%Y}"
+    },
+
+    "cpu": {
+        "interval": 1,
+        "format": " {usage}% ",
+        "on-click": "plasma-systemmonitor"
+    },
+
+    "memory": {
+        "interval": 1,
+        "format": " {}% ",
+        "on-click": "plasma-systemmonitor"
+    },
+
+    "disk": {
+        "interval": 1,
+        "format": " {percentage_used}% ",
+        "path": "/",
+	"on-click": "filelight ~/"
+    }, 
+
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },        
+        "modules": [
+            "custom/system",
+            "disk",
+            "cpu",
+            "memory"
+        ]
+    },
+    
+    "network": {
+        "interval": 1,
+	"format": "{ifname}",
+        "format-wifi": "   {signalStrength}%",
+        "format-ethernet": "",
+        "format-disconnected": "",
+        "tooltip-format": " {ifname} via {gwaddri}",
+        "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "alacritty -e nmtui"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}   {capacity}%",
+        "format-charging": "{capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{icon}  {time}",
+        "tooltip-format-plugged": "Plugged in",
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", " ", " "]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "bluetooth": {
+        "format-disabled": "",
+        "format-off": "",
+        "interval": 30,
+        "on-click": "blueman-manager",
+        "format-no-controller": ""
+    },
+
+"custom/cava": {
+    "format": "{}",
+    "exec": "$HOME/.config/waybar/cava.sh"
+    },
+  "mpris": {
+        "format": "{dynamic}",
+        "artist-len": 30,
+        "title-len": 30,
+        "dynamic-order": ["artist", "title"],
+        "expand": false,
+        "ignored-players": ["firefox", "plasma-browser-integration"]
+  }
+}
+

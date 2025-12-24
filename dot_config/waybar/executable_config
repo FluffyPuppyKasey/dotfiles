@@ -1,0 +1,25 @@
+{
+    "spacing": 4,
+
+    "include": [
+        "~/.config/waybar/modules.json"
+    ],    
+    "modules-left": [
+        "clock",
+        "battery",
+        "dwl/tags",
+        "mpris",
+    ],
+    "modules-center": [
+        "custom/cava",
+    ],
+    "modules-right": [
+        "pulseaudio", 
+        "network", 
+        "cpu", 
+        "memory",
+	"disk",
+        "tray",
+        "custom/exit"
+    ]
+}

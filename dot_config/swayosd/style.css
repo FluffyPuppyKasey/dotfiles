@@ -1,0 +1,48 @@
+@define-color background #24282B55;
+@define-color foreground #C8C8C880;
+
+window#osd {
+  border-radius: 999px;
+  border: none;
+  background: @background;
+  box-shadow: inset 0 4px 6px #FFFFFF80;
+}
+
+window#osd #container {
+  margin: 12px;
+  padding: 8px;
+  background: transparent;
+}
+
+window#osd image,
+window#osd label {
+  color: @foreground;
+}
+
+window#osd progressbar:disabled,
+window#osd image:disabled {
+  opacity: 0.2;
+}
+
+window#osd progressbar {
+  min-height: 8px;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+}
+
+window#osd trough {
+  min-height: inherit;
+  border-radius: inherit;
+  border: none;
+  background: alpha(@foreground, 0.2);
+  box-shadow: inset 0 2px 2px #000000CC;
+}
+
+window#osd progress {
+  min-height: inherit;
+  border-radius: inherit;
+  border: none;
+  background: @foreground;
+  box-shadow: inset 0 2px 2px #FFFFFFCC;
+}

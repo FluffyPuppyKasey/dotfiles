@@ -1,0 +1,78 @@
+configuration {
+  modes: [ drun ];
+  display-drun: "";
+}
+entry {
+    placeholder: "";
+}
+
+element {
+  orientation: horizontal;
+  children: [ element-text, element-icon ];
+  spacing: 0px;
+}
+
+element-icon {
+    size: 1.5em;
+    padding: 0.25em;
+}
+element-text {
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+window {
+    width: 20em;
+    border-radius: 12px;
+    padding: 6px;
+}
+
+mainbox {
+    children: [inputbar, listview];
+}
+
+inputbar {
+    children: [prompt, entry];
+}
+
+scrollbar {
+   handle-rounded-corners: true;
+}
+
+
+* {
+    /* Theme settings */
+    highlight: bold;
+    scrollbar: false;
+    font: "Fira Sans Light 14";
+
+    /* Colors */
+    bg:          #13110a77;
+    selected:          #C8C8C8E6;
+    unselected:          #C8C8C870;
+    transparent:         #00000000;
+
+    /* Theme colors */
+    background:                  @bg;
+    background-color:            @transparent;
+    foreground:                  @unselected;
+    border-color:                @transparent;
+    separatorcolor:              @transparent;
+    scrollbar-handle:            @transparent;
+    normal-background:           @transparent;
+    normal-foreground:           @foreground;
+    alternate-normal-background: @transparent;
+    alternate-normal-foreground: @foreground;
+    selected-normal-background:  @transparent;
+    selected-normal-foreground:  @selected;
+
+    active-foreground:           @background;
+    alternate-active-background: @active-background;
+    alternate-active-foreground: @active-foreground;
+    selected-active-foreground:  @active-foreground;
+
+    urgent-foreground:           @background;
+    alternate-urgent-background: @urgent-background;
+    alternate-urgent-foreground: @urgent-foreground;
+    selected-urgent-foreground:  @urgent-foreground;
+}

@@ -1,0 +1,2 @@
+#!/bin/bash
+brightnessctl -d intel_backlight s 5%- && brightnessctl -d nvidia_0 s 5%-
